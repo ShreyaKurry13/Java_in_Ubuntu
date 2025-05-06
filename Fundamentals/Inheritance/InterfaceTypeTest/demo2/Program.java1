@@ -4,7 +4,7 @@ import taxation.Worker;
 
 class Program {
 
-    static class Auditor implements AutoCloseable {
+    static class Auditor {
         public Auditor() {
             System.out.println("Auditor - acquiring requred resources...");
         }
@@ -24,12 +24,14 @@ class Program {
 
     private static void doAuditing(String name, int count){
         System.out.printf("Auditing %s...%n",name);
-        
-        try(var a = new Auditor()) {
+        var a = new Auditor();
+        try {
             if (count < 10) 
                 a.audit(name, new Supervisor(count));
             else
                 a.audit(name,new Worker(count));
+        } finally {
+            a.close();
         }
     }
 
