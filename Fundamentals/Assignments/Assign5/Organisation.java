@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Organisation {
     private String name;
@@ -8,6 +7,14 @@ public class Organisation {
 
     public static int autoDeptno = 100;
     public List<Employee> employees;
+
+    public String getName(){
+        return name;
+    }
+
+    public String getLocation(){
+        return location;
+    }
 
     public Organisation(String n,String l) {
         name = n;
@@ -20,7 +27,7 @@ public class Organisation {
         employees.add(emp);
     }
 
-    public Employee deleteEmployee(Employee emp){
+    public boolean deleteEmployee(Employee emp){
         return employees.remove(emp);
     }
 
@@ -31,7 +38,18 @@ public class Organisation {
         return null;
     }
 
-    public double AverageNetIncome(Employee emp){
-        return 0;
+    public void displayEmployee(){
+        for (Employee e : employees) {
+            System.out.println(e);
+        }
+    }
+
+    public double averageNetIncome(){
+        if (employees.isEmpty()) return 0;
+        double total = 0;
+        for (Employee e : employees) {
+            total += e.GetNetIncome();
+        }
+        return total/employees.size();
     }
 }

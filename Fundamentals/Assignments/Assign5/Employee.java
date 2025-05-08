@@ -14,6 +14,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee hours = " + hours + ", Rate = " + rate+ "Net Income = " + GetNetIncome()+ "%n";
+        return "Employee hours = " + hours + ", Rate = " + rate+ ", Net Income = " + GetNetIncome()+ "\n";
     }
 }

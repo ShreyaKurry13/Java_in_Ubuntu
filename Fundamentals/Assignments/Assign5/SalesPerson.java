@@ -14,6 +14,6 @@ public class SalesPerson extends Employee{
 
     @Override
     public String toString() {
-        return "SalesPerson hours = " + hours + ", Rate = " + rate+ "Net Income = " + GetNetIncome()+ "%n";
+        return "SalesPerson hours = " + hours + ", Rate = " + rate+ ", Net Income = " + GetNetIncome()+ "\n";
     }
 }
