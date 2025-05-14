@@ -5,11 +5,11 @@
              version="3.2">
    <persistence-unit name="app.data" transaction-type="RESOURCE_LOCAL">   
      <properties>   
-       <property name="jakarta.persistence.jdbc.url" value=""/>
-       <property name="jakarta.persistence.jdbc.user" value=""/>
-       <property name="jakarta.persistence.jdbc.password" value=""/>
+       <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://192.168.1.53/site?createDatabaseIfNotExist=true"/>
+       <property name="jakarta.persistence.jdbc.user" value="root"/>
+       <property name="jakarta.persistence.jdbc.password" value="root"/>
        <property name="eclipselink.logging.level" value="OFF" />   
-       <!--<property name="eclipselink.ddl-generation" value="create-tables"/>-->
+       <property name="eclipselink.ddl-generation" value="create-tables"/>
      </properties>
      <!--
      <exclude-unlisted-classes>false</exclude-unlisted-classes>
@@ -17,4 +17,3 @@
      -->
    </persistence-unit>
 </persistence>
-

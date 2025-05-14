@@ -2,27 +2,37 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	version="3.1">
 
-	<entity class="">        
-		<table name=""/>
-		<attributes>
-			<id name="">
-				<column name=""/>
-				<generated-value strategy="IDENTITY|TABLE|SEQUENCE"/>
-			</id>
-			<basic name="">
-				<column name=""/>
-			</basic>
-			<one-to-many name="" mapped-by="">
-				<cascade>
-					<cascade-all|persistence|remove/>
-				</cascade>
-			</one-to-many>
-			<many-to-one name="">
-				<join-column name=""/>
-			</many-to-one>
-		</attributes>
+	<entity class="app.tourism.data.TravellerEntity">        
+		<table name="travellers"/>
+			<attributes>
+				<id name="id">
+					<column name="traveller_name"/>
+				</id>
+				<basic name="rating">
+					<column name="rating"/>
+				</basic>
+				<one-to-many name="tours" mapped-by="guest">
+					<cascade>
+						<cascade-all/>
+					</cascade>
+				</one-to-many>
+			</attributes>
 	</entity>
 
+	<entity class="app.tourism.data.TripEntity">        
+		<table name="trips"/>
+			<attributes>
+				<id name="id">
+					<column name="trip_id"/>
+					<generated-value strategy="IDENTITY"/>
+				</id>
+				<basic name="checkin">
+					<column name="checkin_date"/>
+				</basic>
+				<many-to-one name="guest">
+					<join-column name="guest_id"/>
+				</many-to-one>
+			</attributes>
+	</entity>
 
 </entity-mappings>
-

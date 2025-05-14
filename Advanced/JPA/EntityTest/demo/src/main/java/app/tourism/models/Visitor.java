@@ -1,12 +1,14 @@
 package app.tourism.models;
 
 import java.util.Comparator;
-import app.tourism.data.TravallerEntity;
+import java.util.Date;
+
+import app.tourism.data.TravellerEntity;
 import app.tourism.data.TripEntity;
 
-public record Visitor(String name, String stars, int visits, Date recent){
-
-    public static Visitor fromTraveller(main.java.app.tourism.data.TravallerEntity entity){
+public record Visitor(String name, String stars, int visits, Date recent) {
+    
+    public static Visitor fromTraveller(TravellerEntity entity) {
         var trips = entity.getTours();
         return new Visitor(
             entity.getId(),
