@@ -8,7 +8,7 @@ import org.eclipse.jetty.server.Server;
 public class Program {
     
     public static void main(String[] args) throws Exception {
-        var jetty = new Server(Integer.parseInt(System.getProperty("server.http.port", "5000")));
+        var jetty = new Server(Integer.parseInt(System.getProperty("server.http.port", "5001")));
         jetty.setHandler(new WebAppContext(new File("target/deploy.war").getAbsolutePath(), "/")); 
         jetty.start();
         jetty.join();
