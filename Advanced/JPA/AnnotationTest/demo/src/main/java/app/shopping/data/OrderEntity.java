@@ -1,19 +1,37 @@
 package app.shopping.data;
 
-import java.sql.Date;
+import java.util.Date;
 
-import app.shopping.data.ProductEntity;
+import jakarta.persistence.Basic;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "orders")
 public class OrderEntity {
     
+    @Id
+    @Column(name = "ord_no")
     private int orderNo;
 
+    @Basic
+    @Column(name = "ord_date")
     private Date orderDate;
 
+    @Basic
+    @Column(name = "cust_id")
     private String customerId;
 
+    @Basic
+    @Column(name = "qty")
     private int quantity;
 
+    @ManyToOne
+    @JoinColumn(name = "pno")
     private ProductEntity product;
 
     public int getOrderNo() {
@@ -55,4 +73,6 @@ public class OrderEntity {
     public void setProduct(ProductEntity product) {
         this.product = product;
     }
+
+    
 }
