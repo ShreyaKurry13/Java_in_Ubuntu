@@ -2,20 +2,20 @@
 <taglib version="3.1" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-jsptaglibrary_3_1.xsd">
 
 	<tlib-version>1.0</tlib-version>
-	<uri>my.app.tags</uri>
+	<uri>demo.app.tags</uri>
 
-	<!--
+	
 	<tag>
-		<name>tagName</name>
-		<tag-class>web.app.TagClass</tag-class>
-		<body-content>empty|scriptless</body-content>
+		<name>putCurrentTime</name>
+		<tag-class>app.components.ClockTag</tag-class>
+		<body-content>empty</body-content>
 		<attribute>
-			<name>attrib</name>
-			<required>true|false</required>
-			<rtexprvalue>true|false</rtexprvalue>
+			<name>displayFormat</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
 		</attribute>
   	</tag>
-	-->
+	
 
 </taglib>
 
