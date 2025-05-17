@@ -8,7 +8,7 @@ public class Program {
     public static void main(String[] args) throws Exception {
         String dir = System.getProperty("java.io.tmpdir");
         var tomcat = new Tomcat();
-        tomcat.setPort(Integer.parseInt(System.getProperty("server.http.port", "5000")));
+        tomcat.setPort(Integer.parseInt(System.getProperty("server.http.port", "5001")));
         tomcat.setBaseDir(dir);
         tomcat.getHost().setAppBase(dir);
         tomcat.addWebapp("", new File("target/deploy.war").getAbsolutePath());

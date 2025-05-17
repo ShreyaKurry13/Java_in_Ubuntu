@@ -1,8 +1,8 @@
 <project>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>samples</groupId>
-    <artifactId>demo</artifactId>
+    <groupId>taghandlertest</groupId>
+    <artifactId>demo1</artifactId>
     <version>1.0.0</version>
     <packaging>war</packaging>
 
@@ -28,7 +28,12 @@
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc11</artifactId>
-            <version>23.8.0.25.04</version>
+            <version>23.6.0.24.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>6.1.0</version>
         </dependency>
     </dependencies>
 

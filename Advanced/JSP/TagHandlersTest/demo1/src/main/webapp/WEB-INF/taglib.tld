@@ -4,7 +4,6 @@
 	<tlib-version>1.0</tlib-version>
 	<uri>demo.app.tags</uri>
 
-	
 	<tag>
 		<name>putCurrentTime</name>
 		<tag-class>app.components.ClockTag</tag-class>
@@ -15,7 +14,22 @@
 			<rtexprvalue>false</rtexprvalue>
 		</attribute>
   	</tag>
-	
+
+	<tag>
+		<name>fetchNextOrder</name>
+		<tag-class>app.components.InvoiceModelTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>customerId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>orderVar</name>
+			<required>true</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+  	</tag>
 
 </taglib>
 

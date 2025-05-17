@@ -1,0 +1,4 @@
+app/tourism/models/SiteModel.class
+app/tourism/data/TripEntity.class
+app/tourism/data/TravellerEntity.class
+app/tourism/models/Visitor.class

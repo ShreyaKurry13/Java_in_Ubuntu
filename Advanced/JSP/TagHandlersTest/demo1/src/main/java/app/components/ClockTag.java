@@ -8,10 +8,11 @@ import jakarta.servlet.jsp.JspException;
 import jakarta.servlet.jsp.tagext.SimpleTagSupport;
 
 public class ClockTag extends SimpleTagSupport{
+    
     private SimpleDateFormat formatter = new SimpleDateFormat();
 
-    public void setDisplayFormat(String format) {
-        formatter.applyPattern(format);
+    public void setDisplayFormat(String value) {
+        formatter.applyPattern(value);
     }
 
     @Override
