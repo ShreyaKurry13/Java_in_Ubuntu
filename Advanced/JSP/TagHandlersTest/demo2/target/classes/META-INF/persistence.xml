@@ -11,9 +11,9 @@
        <property name="eclipselink.logging.level" value="OFF" />   
        <property name="eclipselink.ddl-generation" value="create-tables"/>
      </properties>
-     
-     <exclude-unlisted-classes>true</exclude-unlisted-classes>
-     <class>app.tourism.data.TravellerEntity</class>
-    <class>app.tourism.data.TripEntity</class>
+     <!--
+     <exclude-unlisted-classes>false</exclude-unlisted-classes>
+     <class></class>
+     -->
    </persistence-unit>
 </persistence>
