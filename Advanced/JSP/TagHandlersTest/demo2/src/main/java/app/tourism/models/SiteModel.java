@@ -1,20 +1,19 @@
 package app.tourism.models;
 
-import app.tourism.data.TravellerEntity;
+import app.tourism.data.TravelerEntity;
 import app.tourism.data.TripEntity;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-
 public class SiteModel {
-
+    
     private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("app.data");
 
     public Iterable<Visitor> getVisitors() {
         try(var em = emf.createEntityManager()){
-            var query = em.createQuery("SELECT e FROM TravellerEntity e WHERE e.rating > 0", TravellerEntity.class);
+            var query = em.createQuery("SELECT e FROM TravelerEntity e WHERE e.rating > 0", TravelerEntity.class);
             return query.getResultStream()
-                .map(Visitor::fromTraveller)
+                .map(Visitor::fromTraveler)
                 .toList();
         }
     }
@@ -23,18 +22,18 @@ public class SiteModel {
         if(visitorId == null || visitorRating < 1 || visitorRating > 5)
             return false;
         try(var em = emf.createEntityManager()){
-            var traveller = em.find(TravellerEntity.class, visitorId);
-            if(traveller == null){
-                traveller = new TravellerEntity();
-                traveller.setId(visitorId);
+            var traveler = em.find(TravelerEntity.class, visitorId);
+            if(traveler == null){
+                traveler = new TravelerEntity();
+                traveler.setId(visitorId);
             }
-            traveller.setRating(visitorRating);
+            traveler.setRating(visitorRating);
             var trip = new TripEntity();
-            trip.setGuest(traveller);
-            traveller.getTours().add(trip);
+            trip.setGuest(traveler);
+            traveler.getTours().add(trip);
             var tx = em.getTransaction();
             tx.begin();
-            em.persist(traveller);
+            em.persist(traveler);
             tx.commit();
             return true;
         }

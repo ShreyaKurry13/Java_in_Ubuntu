@@ -8,7 +8,7 @@ public class TripEntity {
 
     private Date checkin = new Date();
 
-    private TravellerEntity guest;
+    private TravelerEntity guest;
 
     public int getId() {
         return id;
@@ -26,11 +26,11 @@ public class TripEntity {
         this.checkin = checkin;
     }
 
-    public TravellerEntity getGuest() {
+    public TravelerEntity getGuest() {
         return guest;
     }
 
-    public void setGuest(TravellerEntity guest) {
+    public void setGuest(TravelerEntity guest) {
         this.guest = guest;
     }
 

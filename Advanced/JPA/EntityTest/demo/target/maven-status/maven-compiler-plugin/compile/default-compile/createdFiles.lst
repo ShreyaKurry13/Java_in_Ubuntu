@@ -1,5 +1,5 @@
 app/tourism/data/TripEntity.class
+app/tourism/data/TravelerEntity.class
 app/tourism/models/Visitor.class
 app/tourism/models/SiteModel.class
-app/tourism/data/TravellerEntity.class
 app/Program.class
