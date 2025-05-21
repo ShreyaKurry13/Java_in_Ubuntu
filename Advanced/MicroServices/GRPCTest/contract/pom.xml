@@ -2,8 +2,8 @@
 <project>
     
 	<modelVersion>4.0.0</modelVersion>
-    <groupId>grpc</groupId>
-    <artifactId>proto-lib</artifactId>
+    <groupId>course.java.advanced</groupId>
+    <artifactId>contract-sales</artifactId>
     <version>1.0.0</version>
 
     <properties>
@@ -67,4 +67,3 @@
     </build>
 
 </project>
-
